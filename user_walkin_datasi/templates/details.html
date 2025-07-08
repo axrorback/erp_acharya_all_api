@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomzod Tafsilotlari</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container mt-4">
+    <h3 class="mb-4">Nomzod maʼlumotlari</h3>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr><th>Ismi</th><td>{{ data.candidate_name }}</td></tr>
+        <tr><th>Application No</th><td>{{ data.application_no_npf }}</td></tr>
+        <tr><th>Program</th><td>{{ data.program_name }}</td></tr>
+        <tr><th>Specialization</th><td>{{ data.program_specialization_name }}</td></tr>
+        <tr><th>Telefon raqam</th><td>{{ data.mobile_number }}</td></tr>
+        <tr><th>PINFL</th><td>{{ data.pinfl }}</td></tr>
+        <tr><th>Pasport raqam</th><td>{{ data.citizen_id_number }}</td></tr>
+        <tr><th>Jinsi</th><td>{{ data.candidate_sex }}</td></tr>
+        <tr><th>Tug‘ilgan sana</th><td>{{ data.date_of_birth }}</td></tr>
+        <tr><th>School</th><td>{{ data.school_name }}</td></tr>
+        <tr><th>Exam status</th><td>{{ data.result_status }}</td></tr>
+        <tr><th>Exam date</th><td>{{ data.exam_date }}</td></tr>
+        <tr><th>Natija bahosi</th><td>{{ data.marks_rank_obtain }}</td></tr>
+        <tr><th>Form to‘ldirish foizi</th><td>{{ data.form_filled_percentage }}%</td></tr>
+        <tr><th>Lead holati</th><td>{{ data.lead_status }}</td></tr>
+        <tr><th>Status</th><td>{{ data.application_status }}</td></tr>
+      </tbody>
+    </table>
+    <a href="{{ url_for('candidate_details') }}" class="btn btn-secondary">Ortga</a>
+  </div>
+</body>
+</html>

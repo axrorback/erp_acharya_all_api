@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <title>Talaba ma'lumotlari</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+  <h2>{{ student.student_name }}</h2>
+  <p><strong>AUID:</strong> {{ student.auid }}</p>
+  <p><strong>Username:</strong> {{ student.username }}</p>
+  <p><strong>Application No:</strong> {{ student.application_no_npf }}</p>
+  <p><strong>Telefon:</strong> {{ student.mobile }}</p>
+  <p><strong>Hudud:</strong> {{ student.permanent_city }}</p>
+
+  <h4 class="mt-4">🚶 Walk-in Ma’lumotlar:</h4>
+  <ul>
+    {% for w in walkins %}
+      <li>{{ w }}</li>
+    {% else %}
+      <li>Ma'lumot topilmadi.</li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('students') }}" class="btn btn-secondary mt-3">⬅️ Ortga</a>
+</body>
+</html>

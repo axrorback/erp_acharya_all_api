@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Student List{% endblock %}
+{% block content %}
+<h3 class="mb-4">👨‍🎓 Student List</h3>
+<table class="table table-hover table-bordered bg-white">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Program</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in students %}
+      <tr>
+        <td>{{ loop.index + page * 20 }}</td>
+        <td>{{ s.auid }}</td>
+        <td>{{ s.student_name }}</td>
+        <td>{{ s.program_name }}</td>
+        <td><a class="btn btn-sm btn-info" href="{{ url_for('student_detail', username=s.auid) }}">🔍 View</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between">
+  {% if page > 0 %}
+    <a href="{{ url_for('student_list', year_id=year_id, page=page-1) }}" class="btn btn-secondary">⬅ Previous</a>
+  {% endif %}
+  <a href="{{ url_for('student_list', year_id=year_id, page=page+1) }}" class="btn btn-primary ms-auto">Next ➡</a>
+</div>
+{% endblock %}

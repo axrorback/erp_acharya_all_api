@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Select Academic Year{% endblock %}
+{% block content %}
+<h3 class="mb-4">🎓 Select Academic Year</h3>
+<div class="list-group">
+  {% for year in years %}
+    <a href="{{ url_for('student_list', year_id=year.id) }}" class="list-group-item list-group-item-action">
+      📅 {{ year.name }}
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

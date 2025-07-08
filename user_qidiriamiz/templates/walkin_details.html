@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Walkin Ma'lumotlari</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="mb-4">Walkin Detallari</h2>
+    <table class="table table-bordered">
+      <tr><th>F.I.O</th><td>{{ info.candidate_name }}</td></tr>
+      <tr><th>Tug‘ilgan sana</th><td>{{ info.date_of_birth }}</td></tr>
+      <tr><th>Passport</th><td>{{ info.citizen_id_number }}</td></tr>
+      <tr><th>Telefon</th><td>{{ info.mobile_number }}</td></tr>
+      <tr><th>Dastur</th><td>{{ info.program_name }}</td></tr>
+      <tr><th>Ixtisoslik</th><td>{{ info.program_specialization_name }}</td></tr>
+      <tr><th>Telegram raqam</th><td>{{ info.telegram_number }}</td></tr>
+      <tr><th>PINFL</th><td>{{ info.pinfl }}</td></tr>
+      <tr><th>Application No</th><td>{{ info.application_no_npf }}</td></tr>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Orqaga</a>
+  </div>
+</body>
+</html>

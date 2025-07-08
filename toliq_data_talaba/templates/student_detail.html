@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Student Detail{% endblock %}
+{% block content %}
+<div class="card p-4 shadow-sm">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="{{ image_url }}" class="img-thumbnail" width="200" alt="Student Image">
+    </div>
+    <div class="col-md-8">
+      <h4>{{ student.student_name }}</h4>
+      <p><strong>Username:</strong> {{ student.auid }}</p>
+      <p><strong>Program:</strong> {{ student.program_name }}</p>
+      <p><strong>Specialization:</strong> {{ student.program_specialization_name }}</p>
+      <p><strong>Blood Group:</strong> {{ student.blood_group }}</p>
+      <p><strong>Valid Till:</strong> {{ student.valid_till }}</p>
+    </div>
+  </div>
+
+  {% if walkin %}
+    <hr>
+    <h5>📄 Walk-in Details</h5>
+    <ul>
+      <li><strong>Application No:</strong> {{ walkin.application_no_npf }}</li>
+      <li><strong>School:</strong> {{ walkin.school_name }}</li>
+      <li><strong>Phone:</strong> {{ walkin.mobile_number }}</li>
+      <li><strong>DOB:</strong> {{ walkin.date_of_birth }}</li>
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}
